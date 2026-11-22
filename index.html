@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="FOR-CLASS IX — CLASS-AI dan creative tools.">
+  <title>FOR-CLASS IX · CLASS-AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark">F</div>
+        <div><strong>FOR-CLASS IX</strong><small>CREATIVE SPACE</small></div>
+        <button class="icon-btn close-sidebar" id="closeSidebar" aria-label="Tutup menu">×</button>
+      </div>
+      <button class="new-chat" id="newChat">＋ <span>New chat</span></button>
+      <div class="side-label">MENU</div>
+      <nav class="nav-list" aria-label="Menu utama">
+        <button class="nav-item active" data-page="chat"><span>✧</span> CLASS-AI</button>
+        <button class="nav-item" data-page="iqc"><span>▣</span> IQC Maker</button>
+        <button class="nav-item" data-page="ff"><span>🔥</span> Fake FF</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <button class="nav-item about-link" data-page="about"><span>ⓘ</span> ABOUT CLASS IX</button>
+      <div class="sidebar-foot">Made for creativity · v1.0</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuButton" aria-label="Buka menu">☰</button>
+        <div class="top-title" id="topTitle">CLASS-AI</div>
+        <div class="top-pill"><span class="status-dot"></span> READY</div>
+      </header>
+
+      <section class="page active-page" id="page-chat">
+        <div class="chat-wrap">
+          <div class="chat-content" id="chatContent">
+            <div class="welcome" id="welcome">
+              <div class="ai-orb">✧</div>
+              <p class="eyebrow">YOUR CLASS ASSISTANT</p>
+              <h1>Halo, ada yang bisa<br><span>CLASS-AI</span> bantu?</h1>
+              <p class="welcome-sub">Tanya apa saja, cari ide, belajar, atau mulai sesuatu yang baru.</p>
+              <div class="suggestions">
+                <button class="suggestion" data-prompt="Bantu aku belajar dengan cara yang mudah dipahami.">📚 Bantu aku belajar</button>
+                <button class="suggestion" data-prompt="Beri aku ide kreatif untuk proyek sekolah.">💡 Cari ide kreatif</button>
+                <button class="suggestion" data-prompt="Buatkan contoh kode HTML sederhana dan jelaskan.">💻 Bantu coding</button>
+              </div>
+            </div>
+            <div class="messages" id="messages" aria-live="polite"></div>
+          </div>
+          <form class="composer" id="chatForm">
+            <textarea id="chatInput" rows="1" placeholder="Message CLASS-AI..." aria-label="Pesan untuk CLASS-AI"></textarea>
+            <div class="composer-bottom">
+              <span class="composer-hint">CLASS-AI dapat membuat kesalahan. Periksa informasi penting.</span>
+              <button class="send-btn" id="sendButton" type="submit" aria-label="Kirim pesan">↑</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="page tool-page" id="page-iqc">
+        <div class="page-heading"><p class="eyebrow">CREATIVE TOOL</p><h1>IQC <span>Maker</span></h1><p>Buat mockup percakapan bergaya WhatsApp iPhone.</p></div>
+        <div class="tool-grid">
+          <div class="panel form-panel">
+            <label>Nama kontak<input id="iqcContact" value="Bestie" maxlength="28"></label>
+            <div class="two-fields">
+              <label>Operator SIM<input id="iqcOperator" value="Telkomsel" maxlength="18"></label>
+              <label>Jam<input id="iqcTime" type="time" value="16:21"></label>
+            </div>
+            <div class="two-fields">
+              <label>Baterai (%)<input id="iqcBattery" type="number" min="1" max="100" value="82"></label>
+              <label>Tampilan<select id="iqcTheme"><option value="dark">Dark mode</option><option value="light">Light mode</option></select></label>
+            </div>
+            <label>Pesan chat <small class="muted">(satu pesan per baris; awali dengan me: atau them:)</small>
+              <textarea id="iqcMessages" class="large-input" rows="7">them: Gua yg udah temenan ama lu 8 th aja emosi sampe terjatuh dan tak bisa bangkit lagi 😭
+me: WKWKWK sabar dulu 😂
+them: Susah banget ya ternyata.</textarea>
+            </label>
+            <div class="button-row"><button class="primary-btn" id="renderIqc">↻ Perbarui preview</button><button class="secondary-btn" id="downloadIqc">↓ Download PNG</button></div>
+            <p class="tiny-note">Mockup kreatif untuk hiburan/desain. Bukan bukti percakapan asli.</p>
+          </div>
+          <div class="preview-panel"><div class="preview-label">LIVE PREVIEW</div><div class="phone-frame" id="iqcPreview"></div></div>
+        </div>
+      </section>
+
+      <section class="page tool-page" id="page-ff">
+        <div class="page-heading"><p class="eyebrow">GAME MOCKUP</p><h1>Fake <span>FF</span></h1><p>Personalisasi nama pada template akun Free Fire.</p></div>
+        <div class="tool-grid">
+          <div class="panel form-panel">
+            <label>Nama pemain<input id="ffName" value="SULTAN REX" maxlength="22"></label>
+            <label>ID akun / tag kecil<input id="ffTag" value="MOCKUP ACCOUNT" maxlength="24"></label>
+            <label>Warna nama<select id="ffColor"><option value="#fff4b0">Gold</option><option value="#ffffff">White</option><option value="#9eeeff">Ice blue</option></select></label>
+            <button class="primary-btn full-btn" id="renderFf">↻ Generate preview</button>
+            <button class="secondary-btn full-btn" id="downloadFf">↓ Download PNG</button>
+            <p class="tiny-note">Gambar ini adalah mockup editan. Nama tidak mengubah akun atau data resmi Free Fire.</p>
+          </div>
+          <div class="preview-panel"><div class="preview-label">TEMPLATE PREVIEW</div><canvas class="game-canvas" id="ffCanvas" width="864" height="1536"></canvas></div>
+        </div>
+      </section>
+
+      <section class="page tool-page" id="page-ml">
+        <div class="page-heading"><p class="eyebrow">GAME MOCKUP</p><h1>Fake <span>ML</span></h1><p>Personalisasi halaman HISTORY Ranked Mobile Legends.</p></div>
+        <div class="tool-grid">
+          <div class="panel form-panel">
+            <label>Nama pemain<input id="mlName" value="CLASS IX"></label>
+            <label>Rank / label<input id="mlRank" value="RANKED • HISTORY" maxlength="24"></label>
+            <label>Catatan mockup<input id="mlNote" value="CUSTOM PREVIEW" maxlength="24"></label>
+            <button class="primary-btn full-btn" id="renderMl">↻ Generate preview</button>
+            <button class="secondary-btn full-btn" id="downloadMl">↓ Download PNG</button>
+            <p class="tiny-note">Mockup ini tidak mengubah hasil pertandingan atau statistik akun Mobile Legends.</p>
+          </div>
+          <div class="preview-panel"><div class="preview-label">TEMPLATE PREVIEW</div><canvas class="game-canvas wide-canvas" id="mlCanvas" width="1536" height="864"></canvas></div>
+        </div>
+      </section>
+
+      <section class="page tool-page" id="page-about">
+        <div class="page-heading"><p class="eyebrow">ABOUT THE PROJECT</p><h1>ABOUT <span>CLASS IX</span></h1><p>Kenali ruang kreatif di balik FOR-CLASS IX.</p></div>
+        <div class="about-card panel">
+          <div class="about-logo">FOR-CLASS IX</div>
+          <h2>One space. Many possibilities.</h2>
+          <p>FOR-CLASS IX adalah website kreatif yang menggabungkan asisten AI CLASS-AI dengan beberapa alat pembuat mockup. Pengguna dapat bertanya kepada AI, membuat mockup chat bergaya WhatsApp, serta mengedit template visual game untuk kebutuhan desain dan hiburan.</p>
+          <div class="about-tags"><span>CLASS-AI</span><span>IQC Maker</span><span>Fake FF</span></div>
+          <p class="tiny-note">Seluruh hasil Fake FF, dan IQC merupakan mockup buatan pengguna, bukan tampilan resmi atau bukti transaksi/percakapan.</p>
+        </div>
+      </section>
+      <footer class="main-footer">FOR-CLASS IX <span>·</span> Made for creativity</footer>
+    </main>
+  </div>
+  <div class="mobile-scrim" id="scrim"></div>
+  <script src="/js/ai.js"></script>
+  <script src="/js/iqc.js"></script>
+  <script src="/js/fake-ff.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
